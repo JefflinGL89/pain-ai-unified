@@ -1,0 +1,23 @@
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Large model weights (>100MB)
+checkpoints/
+models/*.pth
+*.pth
+
+# MediaPipe task models (if large)
+*.task
+
+# Datasets and video files
+dataset/
+*.avi
+*.mp4
+*.mkv
+
+# Python cache
+__pycache__/
+*.pyc
+.DS_Store

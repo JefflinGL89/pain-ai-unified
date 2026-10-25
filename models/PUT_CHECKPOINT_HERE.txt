@@ -1,0 +1,15 @@
+COPY YOUR ACTUAL TRAINED CHECKPOINT HERE.
+
+Expected default filename:
+resnet18_stage09b_weights.pth
+
+The deployment loader expects a 4-class ResNet18 whose final layer is:
+Linear(512, 4)
+
+It supports common checkpoint dictionaries containing:
+state_dict
+model_state_dict
+model
+weights
+
+Do not rename a checkpoint unless MODEL_CHECKPOINT is changed in the environment.

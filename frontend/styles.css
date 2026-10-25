@@ -1,0 +1,98 @@
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#070b10;color:#e9eef5;font:15px/1.65 Inter,Arial,sans-serif}a{text-decoration:none;color:inherit}nav{height:70px;position:sticky;top:0;z-index:10;display:flex;align-items:center;padding:0 6%;background:#070b10ee;border-bottom:1px solid #202a35;backdrop-filter:blur(15px)}.logo{font-size:20px;font-weight:800;letter-spacing:1px}.logo span,footer span{color:#65d9c8}.links{display:flex;gap:26px;margin-left:auto;margin-right:25px}.links a{font-size:12px;color:#8d99a9}.navbtn,.primary{background:#65d9c8;color:#06100e;border:0;border-radius:7px;padding:11px 16px;font-weight:700;cursor:pointer}.hero{min-height:680px;display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;padding:90px 7%;background:radial-gradient(circle at 80% 30%,#11302e55,transparent 35%)}small{font:10px "JetBrains Mono",monospace;letter-spacing:1.5px;color:#65d9c8}.hero h1{font-size:clamp(52px,7vw,92px);line-height:.98;letter-spacing:-4px;margin:20px 0}.hero h1 em{font-style:normal;color:#65d9c8}.hero p{color:#9ba7b7;max-width:650px;font-size:17px}.actions{display:flex;gap:10px;margin:30px 0}.secondary{background:#111820;color:#dfe6ee;border:1px solid #2a3542;border-radius:7px;padding:10px 16px;font-weight:600;cursor:pointer}.stats{display:flex;gap:35px;border-top:1px solid #25303b;padding-top:25px;margin-top:40px}.stats b{display:block;font-size:24px}.stats span{color:#697688;font-size:10px;text-transform:uppercase}.hero-card,.question,.dataset article,.cards article,.charts article,.upload,.output,.trajectory,.metricgrid div,.objective{background:#0c1219;border:1px solid #27323e;border-radius:13px}.hero-card{padding:30px}.pipeline{margin:25px 0}.pipeline div{padding:15px;border-bottom:1px solid #222c37;color:#647285}.pipeline strong{color:#e7edf4;margin-left:14px}.hero-card label{font:9px "JetBrains Mono";color:#596778}main section{max-width:1320px;margin:auto;padding:95px 6%}section>h2{font-size:clamp(32px,4vw,52px);letter-spacing:-2px;margin:8px 0 40px}h3{margin:8px 0}p{color:#8c98a8}.two{display:grid;grid-template-columns:1fr 1fr;gap:45px}.question{padding:30px;border-color:#315a55;background:#0d1c1b}.question p{font-size:19px;color:#d9e2e8}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:30px}.cards article{padding:24px;min-height:145px}.cards article>b{color:#65d9c8;font:11px "JetBrains Mono"}.dataset{display:grid;grid-template-columns:1fr 1fr;gap:15px}.dataset article{padding:30px}.dataset h3{font-size:27px}.nums{display:flex;gap:35px;margin:25px 0}.nums b{display:block;font-size:25px}.nums span{color:#697687;font-size:10px}.fusion{background:#101821;padding:15px;border-radius:7px;font-size:10px}.fusion b{color:#65d9c8;margin:0 8px}.split{display:grid;grid-template-columns:repeat(3,130px) 1fr;gap:15px;margin-top:15px;background:#0b1016;border:1px solid #27323e;border-radius:13px;padding:20px}.split b{font-size:24px}.split span{font-size:9px;color:#697688}.split strong{border-left:1px solid #2b3540;padding-left:25px;color:#65d9c8;font-size:11px}.split small{color:#718094;letter-spacing:0}.architecture{display:flex;align-items:center;justify-content:center;gap:12px;margin:45px 0}.architecture div{padding:25px;text-align:center;border:1px solid #293542;border-radius:10px;background:#0c131a;min-width:130px;font-size:10px;color:#6e7b8d}.architecture b{font-size:16px;color:#e6edf4}.architecture i{color:#526071;font-size:23px}.architecture .accent{border-color:#65d9c8}.timeline{border-left:1px solid #2b3541;padding-left:25px}.timeline>div{padding:15px 0 20px}.timeline b{display:inline-grid;place-items:center;border:1px solid #65d9c8;border-radius:50%;width:28px;height:28px;color:#65d9c8;font:10px "JetBrains Mono"}.timeline h3{display:inline;margin-left:12px}.dark{max-width:none;background:#090e14;border-top:1px solid #1e2833;border-bottom:1px solid #1e2833}.metricgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.metricgrid div{padding:20px}.metricgrid span,.metricgrid small{display:block;color:#728094;font-size:10px}.metricgrid b{display:block;font-size:27px;margin:7px 0}.note{margin:15px 0;padding:15px;border-left:3px solid #65d9c8;background:#0d141b;color:#8794a5;font-size:12px}.charts{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px}.charts article{padding:20px;height:350px}.charts canvas{width:100%!important;height:285px!important}.assessment{display:grid;grid-template-columns:1fr 1fr;gap:15px}.upload,.output{padding:30px;min-height:430px}.upload video{width:100%;height:210px;background:#070b10;margin-top:25px;object-fit:contain;border-radius:8px}.upload button{margin:15px 5px 0 0}.estimate{text-align:center;padding:30px 0;border-bottom:1px solid #27313c}.estimate span{font:9px "JetBrains Mono";color:#728094}.estimate h3{font-size:32px;color:#65d9c8}.estimate>b{font-size:13px}.bar{height:6px;background:#1a232c;border-radius:10px;margin-top:10px}.bar i{display:block;height:100%;width:0;background:#65d9c8;border-radius:10px}.outstats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:20px 0}.outstats div{font-size:9px;color:#687587}.outstats b{display:block;color:#e5ebf2;font-size:13px;margin-top:5px}.output h4{font-size:12px}.prob{display:grid;grid-template-columns:95px 1fr 40px;gap:8px;align-items:center;font-size:10px;margin:8px 0}.prob i{height:5px;background:#1b242e;border-radius:8px;overflow:hidden}.prob i b{display:block;height:100%;background:#65d9c8}.pspi{font-size:10px;border-top:1px solid #252f3a;padding-top:15px}.trajectory{margin-top:15px;height:350px;padding:20px}.disclaimer{text-align:center;color:#536174;font-size:10px;margin-top:15px}.roadmap{display:flex;justify-content:center;align-items:center;gap:12px;margin:40px 0}.roadmap div{padding:18px 25px;border:1px solid #2c3743;border-radius:8px;background:#0c131a}.roadmap i{color:#65d9c8}.future{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.future span,.limits p{padding:15px;border:1px solid #26313d;border-radius:7px;color:#8490a0;font-size:12px}.limits{display:grid;grid-template-columns:1fr 1fr;gap:10px}footer{border-top:1px solid #222c37;padding:45px 7%;color:#697688}footer b{color:#e9eef5;font-size:18px}@media(max-width:950px){.hero,.two,.dataset,.assessment{grid-template-columns:1fr}.cards,.future{grid-template-columns:repeat(2,1fr)}.metricgrid{grid-template-columns:repeat(3,1fr)}.links{display:none}.architecture{flex-wrap:wrap}.split{grid-template-columns:repeat(3,1fr)}.split strong{grid-column:1/-1;border-left:0;border-top:1px solid #2b3540;padding:15px 0 0}.charts{grid-template-columns:1fr}}@media(max-width:600px){main section,.hero{padding:65px 5%}.cards,.future,.limits,.metricgrid{grid-template-columns:1fr}.stats{flex-wrap:wrap}.split{grid-template-columns:1fr 1fr}.outstats{grid-template-columns:1fr 1fr}.roadmap{overflow:auto;justify-content:flex-start}.architecture{display:grid}.architecture i{transform:rotate(90deg)}}
+
+/* Multimodal Clinical & Vitals Enhancements */
+.clinical-card, .vitals-card {
+  background: #0c1219;
+  border: 1px solid #27323e;
+  border-radius: 13px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.clinical-scales {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+  text-align: center;
+}
+.scale-box {
+  background: #101720;
+  border: 1px solid #24303d;
+  border-radius: 8px;
+  padding: 12px 6px;
+}
+.scale-box span {
+  font: 9px "JetBrains Mono", monospace;
+  color: #728094;
+  display: block;
+}
+.scale-box b {
+  font-size: 22px;
+  color: #e9eef5;
+  display: block;
+  margin: 5px 0;
+}
+.scale-box small {
+  font-size: 9px;
+  color: #65d9c8;
+}
+.status-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  background: #173832;
+  color: #65d9c8;
+  border: 1px solid #2a5951;
+}
+.status-pill.mild {
+  background: #332d16;
+  color: #ffda65;
+  border-color: #594d26;
+}
+.status-pill.moderate {
+  background: #3d2416;
+  color: #ff9d56;
+  border-color: #663e26;
+}
+.status-pill.severe {
+  background: #3d1616;
+  color: #ff6565;
+  border-color: #662626;
+}
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+}
+.vital-item {
+  background: #101720;
+  border: 1px solid #24303d;
+  border-radius: 8px;
+  padding: 12px;
+}
+.vital-item span {
+  font-size: 9px;
+  color: #728094;
+  display: block;
+}
+.vital-item b {
+  font-size: 19px;
+  color: #65d9c8;
+  display: block;
+  margin-top: 3px;
+}
+#pulseCanvas {
+  width: 100%;
+  height: 95px;
+  background: #070b10;
+  border-radius: 8px;
+  border: 1px solid #1e2834;
+  margin-top: 8px;
+  display: block;
+}

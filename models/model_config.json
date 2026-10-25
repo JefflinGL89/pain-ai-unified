@@ -1,0 +1,27 @@
+{
+  "model": "ResNet18",
+  "stage": "09B",
+  "num_classes": 4,
+  "classes": {
+    "0": "No pain",
+    "1": "Low pain",
+    "2": "Moderate pain",
+    "3": "High pain"
+  },
+  "image_size": 224,
+  "normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "dropout": 0.4,
+  "checkpoint_epoch": 21,
+  "validation_macro_f1": 0.5943594962346277
+}

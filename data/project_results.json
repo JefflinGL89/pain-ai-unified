@@ -1,0 +1,515 @@
+{
+  "project": {
+    "title": "Automated Facial Pain Assessment",
+    "dataset": "EmotionPain",
+    "target": "PSPI",
+    "split": "Distribution-aware subject-wise split",
+    "total_frames": 48398,
+    "subjects": 25,
+    "sequences": 200
+  },
+  "model": {
+    "name": "ResNet18",
+    "stage": "Stage 09B",
+    "loss": "Focal Loss",
+    "input_size": "224 \u00d7 224",
+    "best_epoch": 21
+  },
+  "metrics": {
+    "accuracy": 0.7843,
+    "balanced_accuracy": 0.5659,
+    "precision": 0.6545,
+    "recall": 0.5659,
+    "macro_f1": 0.5944,
+    "weighted_f1": 0.7671,
+    "mcc": 0.1862
+  },
+  "classes": [
+    {
+      "id": 0,
+      "name": "No pain"
+    },
+    {
+      "id": 1,
+      "name": "Low pain"
+    },
+    {
+      "id": 2,
+      "name": "Moderate pain"
+    },
+    {
+      "id": 3,
+      "name": "High pain"
+    }
+  ],
+  "class_distribution": {
+    "labels": [
+      "No pain",
+      "Low pain",
+      "Moderate pain",
+      "High pain"
+    ],
+    "true": [
+      5998,
+      985,
+      204,
+      59
+    ],
+    "predicted": [
+      6325,
+      662,
+      225,
+      34
+    ]
+  },
+  "confusion_matrix": {
+    "labels": [
+      "No pain",
+      "Low pain",
+      "Moderate pain",
+      "High pain"
+    ],
+    "values": [
+      [
+        5421,
+        514,
+        63,
+        0
+      ],
+      [
+        879,
+        86,
+        20,
+        0
+      ],
+      [
+        25,
+        37,
+        142,
+        0
+      ],
+      [
+        0,
+        25,
+        0,
+        34
+      ]
+    ]
+  },
+  "class_metrics": {
+    "labels": [
+      "No pain",
+      "Low pain",
+      "Moderate pain",
+      "High pain"
+    ],
+    "precision": [
+      0.8571,
+      0.1299,
+      0.6311,
+      1.0
+    ],
+    "recall": [
+      0.9038,
+      0.0873,
+      0.6961,
+      0.5763
+    ],
+    "f1": [
+      0.8798,
+      0.1044,
+      0.662,
+      0.7312
+    ]
+  },
+  "ordinal_error": {
+    "labels": [
+      "Exact",
+      "1-level",
+      "2-level",
+      "3-level"
+    ],
+    "values": [
+      0.7843,
+      0.2001,
+      0.0156,
+      0.0
+    ],
+    "mean": 0.2313
+  },
+  "pspi_analysis": [
+    {
+      "pspi": 0.0,
+      "frames": 5998,
+      "accuracy": 0.9038,
+      "confidence": 0.755
+    },
+    {
+      "pspi": 1.0,
+      "frames": 458,
+      "accuracy": 0.0262,
+      "confidence": 0.7954
+    },
+    {
+      "pspi": 2.0,
+      "frames": 362,
+      "accuracy": 0.0691,
+      "confidence": 0.7274
+    },
+    {
+      "pspi": 3.0,
+      "frames": 165,
+      "accuracy": 0.297,
+      "confidence": 0.6697
+    },
+    {
+      "pspi": 4.0,
+      "frames": 102,
+      "accuracy": 0.7059,
+      "confidence": 0.6501
+    },
+    {
+      "pspi": 5.0,
+      "frames": 30,
+      "accuracy": 0.8,
+      "confidence": 0.7481
+    },
+    {
+      "pspi": 6.0,
+      "frames": 72,
+      "accuracy": 0.6389,
+      "confidence": 0.7308
+    },
+    {
+      "pspi": 10.0,
+      "frames": 49,
+      "accuracy": 0.5918,
+      "confidence": 0.4461
+    },
+    {
+      "pspi": 12.0,
+      "frames": 10,
+      "accuracy": 0.5,
+      "confidence": 0.3973
+    }
+  ],
+  "low_pain_analysis": {
+    "frames": 985,
+    "correct": 86,
+    "predicted_no_pain": 879,
+    "recall": 0.0873,
+    "by_pspi": [
+      {
+        "pspi": 1.0,
+        "frames": 458,
+        "accuracy": 0.0262
+      },
+      {
+        "pspi": 2.0,
+        "frames": 362,
+        "accuracy": 0.0691
+      },
+      {
+        "pspi": 3.0,
+        "frames": 165,
+        "accuracy": 0.297
+      }
+    ]
+  },
+  "confidence_summary": {
+    "labels": [
+      "Correct",
+      "Incorrect"
+    ],
+    "counts": [
+      5683,
+      1563
+    ],
+    "mean": [
+      0.7727,
+      0.6667
+    ],
+    "median": [
+      0.8163,
+      0.6668
+    ]
+  },
+  "subject_analysis": [
+    {
+      "subject": "043-jh043",
+      "frames": 1120,
+      "accuracy": 0.8982142857142857,
+      "balanced_accuracy": 0.3457360570687419,
+      "macro_f1": 0.3433737341837768
+    },
+    {
+      "subject": "064-ak064",
+      "frames": 1612,
+      "accuracy": 0.8728287841191067,
+      "balanced_accuracy": 0.5069121492272495,
+      "macro_f1": 0.4908246268741538
+    },
+    {
+      "subject": "101-mg101",
+      "frames": 2819,
+      "accuracy": 0.8815182688896772,
+      "balanced_accuracy": 0.8815182688896772,
+      "macro_f1": 0.3123428858722976
+    },
+    {
+      "subject": "124-dn124",
+      "frames": 1695,
+      "accuracy": 0.4631268436578171,
+      "balanced_accuracy": 0.6187039235381852,
+      "macro_f1": 0.5018897873614855
+    }
+  ],
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.2435,
+      "val_loss": 0.1014,
+      "val_accuracy": 0.0279,
+      "val_balanced_accuracy": 0.2084,
+      "val_macro_f1": 0.0353
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.2225,
+      "val_loss": 0.1079,
+      "val_accuracy": 0.0156,
+      "val_balanced_accuracy": 0.2116,
+      "val_macro_f1": 0.0242
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.225,
+      "val_loss": 0.1338,
+      "val_accuracy": 0.0131,
+      "val_balanced_accuracy": 0.2911,
+      "val_macro_f1": 0.0127
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.1108,
+      "val_loss": 0.0653,
+      "val_accuracy": 0.5682,
+      "val_balanced_accuracy": 0.4673,
+      "val_macro_f1": 0.2975
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.0684,
+      "val_loss": 0.0502,
+      "val_accuracy": 0.6043,
+      "val_balanced_accuracy": 0.7035,
+      "val_macro_f1": 0.4612
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.0594,
+      "val_loss": 0.06,
+      "val_accuracy": 0.68,
+      "val_balanced_accuracy": 0.499,
+      "val_macro_f1": 0.3907
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.0555,
+      "val_loss": 0.0809,
+      "val_accuracy": 0.7643,
+      "val_balanced_accuracy": 0.5883,
+      "val_macro_f1": 0.4455
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.0519,
+      "val_loss": 0.0742,
+      "val_accuracy": 0.7655,
+      "val_balanced_accuracy": 0.5579,
+      "val_macro_f1": 0.4897
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.0489,
+      "val_loss": 0.0687,
+      "val_accuracy": 0.7546,
+      "val_balanced_accuracy": 0.6221,
+      "val_macro_f1": 0.5323
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.0488,
+      "val_loss": 0.069,
+      "val_accuracy": 0.7299,
+      "val_balanced_accuracy": 0.5623,
+      "val_macro_f1": 0.4745
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.0446,
+      "val_loss": 0.0758,
+      "val_accuracy": 0.7508,
+      "val_balanced_accuracy": 0.6164,
+      "val_macro_f1": 0.431
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.0419,
+      "val_loss": 0.0607,
+      "val_accuracy": 0.7462,
+      "val_balanced_accuracy": 0.5504,
+      "val_macro_f1": 0.5353
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.0413,
+      "val_loss": 0.0798,
+      "val_accuracy": 0.7578,
+      "val_balanced_accuracy": 0.546,
+      "val_macro_f1": 0.5376
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.0397,
+      "val_loss": 0.0708,
+      "val_accuracy": 0.7599,
+      "val_balanced_accuracy": 0.4452,
+      "val_macro_f1": 0.3935
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.0379,
+      "val_loss": 0.0783,
+      "val_accuracy": 0.7673,
+      "val_balanced_accuracy": 0.4618,
+      "val_macro_f1": 0.4659
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.0356,
+      "val_loss": 0.0746,
+      "val_accuracy": 0.6172,
+      "val_balanced_accuracy": 0.409,
+      "val_macro_f1": 0.3746
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.0349,
+      "val_loss": 0.0804,
+      "val_accuracy": 0.7843,
+      "val_balanced_accuracy": 0.5659,
+      "val_macro_f1": 0.5944
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.0346,
+      "val_loss": 0.0662,
+      "val_accuracy": 0.8124,
+      "val_balanced_accuracy": 0.5296,
+      "val_macro_f1": 0.5737
+    },
+    {
+      "epoch": 23,
+      "train_loss": 0.0341,
+      "val_loss": 0.0673,
+      "val_accuracy": 0.7916,
+      "val_balanced_accuracy": 0.5565,
+      "val_macro_f1": 0.579
+    },
+    {
+      "epoch": 24,
+      "train_loss": 0.0342,
+      "val_loss": 0.0677,
+      "val_accuracy": 0.813,
+      "val_balanced_accuracy": 0.5308,
+      "val_macro_f1": 0.5767
+    },
+    {
+      "epoch": 25,
+      "train_loss": 0.0331,
+      "val_loss": 0.0696,
+      "val_accuracy": 0.8236,
+      "val_balanced_accuracy": 0.5247,
+      "val_macro_f1": 0.5696
+    },
+    {
+      "epoch": 26,
+      "train_loss": 0.0338,
+      "val_loss": 0.0683,
+      "val_accuracy": 0.8191,
+      "val_balanced_accuracy": 0.533,
+      "val_macro_f1": 0.5909
+    }
+  ],
+  "three_class_supplementary": {
+    "labels": [
+      "Minimal/No pain",
+      "Moderate pain",
+      "High pain"
+    ],
+    "accuracy": 0.9765,
+    "balanced_accuracy": 0.7535,
+    "macro_f1": 0.7937,
+    "confusion_matrix": [
+      [
+        6900,
+        83,
+        0
+      ],
+      [
+        62,
+        142,
+        0
+      ],
+      [
+        25,
+        0,
+        34
+      ]
+    ]
+  },
+  "test": {
+    "model": "Stage 09B ResNet18",
+    "checkpoint_epoch": 21,
+    "test_frames": 6967,
+    "metrics": {
+      "accuracy": 0.8286206401607579,
+      "balanced_accuracy": 0.36583653937451555,
+      "macro_precision": 0.37126330847238986,
+      "macro_recall": 0.36583653937451555,
+      "macro_f1": 0.3389400525814804,
+      "weighted_f1": 0.806222737061169,
+      "mcc": 0.30195091637790056
+    },
+    "confusion_matrix": [
+      [
+        5580,
+        177,
+        46,
+        1
+      ],
+      [
+        683,
+        170,
+        31,
+        32
+      ],
+      [
+        19,
+        54,
+        14,
+        124
+      ],
+      [
+        0,
+        0,
+        27,
+        9
+      ]
+    ],
+    "test_used_for_training": false,
+    "test_used_for_tuning": false,
+    "subject_wise_split": true
+  }
+}

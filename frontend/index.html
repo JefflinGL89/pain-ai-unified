@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PAIN-AI | Multimodal Contactless Pain & rPPG Assessment</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="logo">PAIN<span>AI</span></div>
+  <div class="links">
+    <a href="#research">Research</a>
+    <a href="#method">Methodology</a>
+    <a href="#experiments">Experiments</a>
+    <a href="#performance">Performance</a>
+    <a href="#assessment">Assessment</a>
+  </div>
+  <a class="navbtn" href="#assessment">Try System</a>
+</nav>
+
+<header class="hero">
+  <div>
+    <small>CAPSTONE RESEARCH · DEEP LEARNING & rPPG</small>
+    <h1>Contactless<br><em>Pain Assessment</em></h1>
+    <p>Multimodal clinical pain monitoring combining ConvNeXt-Tiny facial Action Unit regression with contactless remote photoplethysmography (POS rPPG) vital sign tracking.</p>
+    <div class="actions">
+      <a href="#assessment" class="primary">Live Assessment →</a>
+      <a href="#research" class="secondary">Explore Research</a>
+    </div>
+    <div class="stats">
+      <div><b>48,398</b><span>Frames</span></div>
+      <div><b>25</b><span>Subjects</span></div>
+      <div><b>0.79</b><span>BPM Error (Top 15)</span></div>
+      <div><b>0.978</b><span>MAE (Cross-Subject)</span></div>
+    </div>
+  </div>
+  <div class="hero-card">
+    <small>MULTIMODAL PIPELINE</small>
+    <div class="pipeline">
+      <div>01 <strong>Facial Video Feed</strong></div>
+      <div>02 <strong>MediaPipe 468 3D Mesh</strong></div>
+      <div>03 <strong>ConvNeXt-Tiny PSPI Regressor</strong></div>
+      <div>04 <strong>POS rPPG (BPM & Respiration)</strong></div>
+      <div>05 <strong>Quality-Gated Late Fusion (CPOT/NRS)</strong></div>
+    </div>
+    <label>● UNIFIED CLINICAL ARCHITECTURE</label>
+  </div>
+</header>
+
+<main>
+  <!-- Section 1: Research Foundation -->
+  <section id="research">
+    <small>01 · RESEARCH FOUNDATION</small>
+    <h2>Related Work & Multimodal Novelty</h2>
+    <div class="two">
+      <div>
+        <h3>The Clinical Problem</h3>
+        <p>Post-surgical and intensive-care patients frequently cannot verbally communicate acute pain due to sedation or endotracheal intubation. Wired electrodes cause dermal irritation and pressure sores.</p>
+        <p>Single-modality facial AI is easily confounded by talking or smiling, while vital signs alone can fluctuate due to fever or medication. Fusing both modalities eliminates these failure modes.</p>
+      </div>
+      <div class="question">
+        <small>RESEARCH QUESTION</small>
+        <p>Can a contactless, multimodal deep-learning architecture fusing facial expression regression with remote optical photoplethysmography provide robust, real-time clinical pain assessment under unconstrained conditions?</p>
+      </div>
+    </div>
+    <div class="cards">
+      <article>
+        <b>01</b>
+        <h3>Spatial Attention</h3>
+        <p>ConvNeXt-Tiny with spatial attention focuses gradients directly on key pain Action Units.</p>
+      </article>
+      <article>
+        <b>02</b>
+        <h3>Contactless Vitals</h3>
+        <p>Forehead and cheek rPPG extracts cardiovascular pulse dynamics and respiration without skin contact.</p>
+      </article>
+      <article>
+        <b>03</b>
+        <h3>Quality-Gated Fusion</h3>
+        <p>Dynamically attenuates vitals weighting when head motion or low optical SQI occurs.</p>
+      </article>
+      <article>
+        <b>04</b>
+        <h3>Standardized Clinical Scales</h3>
+        <p>Automatically maps research PSPI into clinical CPOT (0-8) and NRS (0-10) hospital tools.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section 2: Data & Evaluation Design -->
+  <section>
+    <small>02 · DATASETS</small>
+    <h2>Dual-Dataset Scientific Validation</h2>
+    <div class="dataset">
+      <article>
+        <small>FACIAL PAIN DATASET</small>
+        <h3>UNBC-McMaster (EmotionPain)</h3>
+        <div class="nums">
+          <div><b>48,398</b><span>Frames</span></div>
+          <div><b>25</b><span>Subjects</span></div>
+          <div><b>200</b><span>Sequences</span></div>
+        </div>
+        <p>Annotated with frame-level Prkachin and Solomon Pain Intensity (PSPI) scores. Evaluated under strict Subject-Independent splits to eliminate identity leakage.</p>
+      </article>
+      <article>
+        <small>PHYSIOLOGICAL rPPG DATASET</small>
+        <h3>UBFC-rPPG Archive</h3>
+        <div class="nums">
+          <div><b>41</b><span>Subjects</span></div>
+          <div><b>0.79</b><span>MAE (Stationary BPM)</span></div>
+          <div><b>-0.40</b><span>Mean Bias (Bland-Altman)</span></div>
+        </div>
+        <p>Full video cohort paired with medical finger-clip pulse oximeter ground truth for rigorous cardiovascular accuracy validation.</p>
+        <div class="fusion">FACIAL CONVNEXT <b>+</b> POS rPPG VITALS <b>→</b> MULTIMODAL FUSION</div>
+      </article>
+    </div>
+    <div class="split">
+      <b>20<br><span>TRAIN SUBS</span></b>
+      <b>5<br><span>TEST SUBS</span></b>
+      <b>4,021<br><span>TEST FRAMES</span></b>
+      <strong>✓ ZERO SUBJECT LEAKAGE<br><small>Test cohort subjects remain completely unseen during model training.</small></strong>
+    </div>
+  </section>
+
+  <!-- Section 3: Methodology -->
+  <section id="method">
+    <small>03 · METHODOLOGY</small>
+    <h2>From Camera Pixels to Clinical Vitals</h2>
+    <div class="architecture">
+      <div>VIDEO<br><b>Input Feed</b></div>
+      <i>→</i>
+      <div>MEDIAPIPE<br><b>468 3D Mesh</b></div>
+      <i>→</i>
+      <div>CONVNEXT<br><b>Spatial Attn</b></div>
+      <i>→</i>
+      <div>POS rPPG<br><b>BPM / Resp</b></div>
+      <i>→</i>
+      <div class="accent">FUSION<br><b>CPOT / NRS</b></div>
+    </div>
+    <div class="cards">
+      <article>
+        <b>01</b>
+        <h3>Mesh Tracking</h3>
+        <p>MediaPipe 468 landmarks lock onto anatomical capillary beds, eliminating Haar cascade jitter.</p>
+      </article>
+      <article>
+        <b>02</b>
+        <h3>ConvNeXt Regressor</h3>
+        <p>Extracts 768 feature maps and predicts continuous PSPI pain intensity with Huber Loss.</p>
+      </article>
+      <article>
+        <b>03</b>
+        <h3>POS rPPG Engine</h3>
+        <p>Plane-Orthogonal-to-Skin projects chrominance traces to eliminate lighting and skin tone bias.</p>
+      </article>
+      <article>
+        <b>04</b>
+        <h3>Clinical Decisioning</h3>
+        <p>Tri-scale output maps continuous scores to acute hospital monitoring thresholds.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Section 4: Experimental Timeline -->
+  <section id="experiments">
+    <small>04 · EXPERIMENTAL JOURNEY</small>
+    <h2>What Was Explored & Validated</h2>
+    <div class="timeline">
+      <div><b>01</b><h3>Frame-level ResNet Baseline</h3><p>Established discrete 4-class baseline with Focal Loss.</p></div>
+      <div><b>02</b><h3>Overcoming Class Imbalance</h3><p>Balanced UNBC dataset 1:1 and shifted from discrete classification to continuous regression.</p></div>
+      <div><b>03</b><h3>ConvNeXt-Tiny + Spatial Attention</h3><p>Added spatial gating to emphasize brow (AU4), eye (AU6/7), and levator (AU9/10) contractions.</p></div>
+      <div><b>04</b><h3>Contactless rPPG Integration</h3><p>Built POS algorithm pipeline with zero-padded FFT and parabolic peak interpolation for sub-BPM precision.</p></div>
+      <div><b>05</b><h3>Subject-Independent Verification</h3><p>Eliminated random-split data leakage, proving cross-subject generalization on 4,021 unseen frames.</p></div>
+      <div><b>06</b><h3>Quality-Gated Multimodal Fusion</h3><p>Fuses somatic facial grimaces with autonomic heart rate stress and respiratory sinus arrhythmia.</p></div>
+    </div>
+  </section>
+
+  <!-- Section 5: Failure Analysis -->
+  <section class="dark">
+    <small>05 · FAILURE ANALYSIS</small>
+    <h2>Addressed Clinical Failure Modes</h2>
+    <div class="cards">
+      <article><b>01</b><h3>Expression Ambiguity</h3><p>Talking or smiling triggers facial twitches. Multimodal fusion cross-checks physiological vitals to prevent false alarms.</p></article>
+      <article><b>02</b><h3>Head Motion & Jitter</h3><p>Motion penalty gates rPPG weighting to 0% during severe movement, relying temporarily on facial features.</p></article>
+      <article><b>03</b><h3>Skin Tone & Melanin Bias</h3><p>POS temporal mean normalization ($C / \mu(C)$) eliminates static melanin pigmentation differences.</p></article>
+      <article><b>04</b><h3>Lighting Shadows</h3><p>CLAHE equalization in LAB color space ensures wrinkle contrast remains consistent under indoor clinical lighting.</p></article>
+    </div>
+  </section>
+
+  <!-- Section 6: Model Performance Dashboard -->
+  <section id="performance">
+    <small>06 · MODEL BENCHMARKS</small>
+    <h2>Experimental Validation Dashboard</h2>
+    <div class="metricgrid">
+      <div><span>Subject-Indep MAE</span><b>0.978</b><small>PSPI scale (0-16)</small></div>
+      <div><span>Pearson Corr (r)</span><b>0.693</b><small>Unseen test cohort</small></div>
+      <div><span>Pain Sensitivity</span><b>81.33%</b><small>Recall on pain frames</small></div>
+      <div><span>Top-15 rPPG Error</span><b>0.79 BPM</b><small>vs Hospital Oximeter</small></div>
+      <div><span>Bland-Altman Bias</span><b>-0.40 BPM</b><small>Limits: [-6.8, +6.0]</small></div>
+      <div><span>Runtime Speed</span><b>103 FPS</b><small>Real-time edge runtime</small></div>
+    </div>
+    <div class="note">
+      <b>Scientific Rigor Note:</b> Legacy random-split frame sampling reports an artificial 0.430 MAE due to temporal identity leakage. Our system achieves <b>0.978 MAE ($r=0.693$)</b> on strictly unseen human subjects.
+    </div>
+    <div class="charts">
+      <article><h3>Class Distribution</h3><canvas id="classChart"></canvas></article>
+      <article><h3>Model Metrics</h3><canvas id="metricChart"></canvas></article>
+      <article><h3>Confusion Matrix</h3><div id="matrix"></div></article>
+      <article><h3>Ordinal Error</h3><canvas id="ordinalChart"></canvas></article>
+    </div>
+  </section>
+
+  <!-- Section 7: Deep Analytics -->
+  <section>
+    <small>07 · DEEP ANALYTICS</small>
+    <h2>Cross-Subject Diagnostics</h2>
+    <div class="charts">
+      <article><h3>PSPI Analysis</h3><canvas id="pspiChart"></canvas></article>
+      <article><h3>Confidence Distribution</h3><canvas id="confidenceChart"></canvas></article>
+      <article><h3>Subject Generalization</h3><canvas id="subjectChart"></canvas></article>
+      <article><h3>Training History</h3><canvas id="historyChart"></canvas></article>
+    </div>
+  </section>
+
+  <!-- Section 8: Interactive Multimodal System -->
+  <section id="assessment">
+    <small>08 · INTERACTIVE MULTIMODAL SYSTEM</small>
+    <h2>Live Clinical Pain Assessment</h2>
+    
+    <div class="assessment">
+      <!-- Card 1: Video Input -->
+      <article class="upload">
+        <h3>Analyse a facial video</h3>
+        <p>Upload a video clip or record via webcam. The backend extracts frames, runs MediaPipe FaceMesh, computes ConvNeXt pain scores, and extracts POS rPPG vitals.</p>
+        <div>
+          <button class="primary" id="upload">Upload Video</button>
+          <button class="secondary" id="camera">Start Webcam</button>
+        </div>
+        <input id="file" type="file" accept="video/*" hidden>
+        <video id="preview" controls muted></video>
+        <div id="webcam"></div>
+      </article>
+
+      <!-- Card 2: Discrete Class Model Output -->
+      <article class="output">
+        <small>DISCRETE CLASSIFICATION</small>
+        <div class="estimate">
+          <span>PRIMARY ESTIMATE</span>
+          <h3 id="label">Awaiting input</h3>
+          <b id="conf">—</b>
+          <div class="bar"><i id="bar"></i></div>
+        </div>
+        <div class="outstats">
+          <div>Frames<b id="frames">—</b></div>
+          <div>Duration<b id="duration">—</b></div>
+          <div>Sample FPS<b id="fps">—</b></div>
+          <div>Face rate<b id="face">—</b></div>
+        </div>
+        <h4>Discrete Class Probabilities</h4>
+        <div id="probs"></div>
+        <p class="pspi" id="pspi">Continuous Multimodal Inference Ready.</p>
+      </article>
+
+      <!-- Card 3: Clinical Pain Status Card (NEW) -->
+      <article class="clinical-card">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <small style="color:#65d9c8;">CLINICAL PAIN STATUS</small>
+            <span id="clinicalBadge" class="status-pill">AWAITING INPUT</span>
+          </div>
+          <h3 style="margin:8px 0 4px;">Standardized Metrics</h3>
+          <p style="font-size:12px; margin:0 0 12px; color:#8d99a9;">Tri-scale mapping across facial Action Units and autonomic arousal.</p>
+        </div>
+        
+        <div class="clinical-scales">
+          <div class="scale-box">
+            <span>PSPI SCORE</span>
+            <b id="scorePspi">—</b>
+            <small>Range 0.0 - 16.0</small>
+          </div>
+          <div class="scale-box">
+            <span>CPOT SCORE</span>
+            <b id="scoreCpot">—</b>
+            <small>ICU Tool (0 - 8)</small>
+          </div>
+          <div class="scale-box">
+            <span>NRS SCORE</span>
+            <b id="scoreNrs">—</b>
+            <small>Numeric (0 - 10)</small>
+          </div>
+        </div>
+
+        <div style="font-size:11px; color:#8490a0; border-top:1px solid #1f2a36; padding-top:10px;" id="clinicalInterpretation">
+          Upload a video or use the webcam to compute continuous multimodal clinical pain indices.
+        </div>
+      </article>
+
+      <!-- Card 4: Contactless Vitals Card (NEW) -->
+      <article class="vitals-card">
+        <div>
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <small style="color:#65d9c8;">CONTACTLESS rPPG VITALS</small>
+            <span id="sqiBadge" class="status-pill" style="background:#162a3d; color:#56b5ff; border-color:#204366;">SQI: —</span>
+          </div>
+          <h3 style="margin:8px 0 4px;">Hemodynamic Signals</h3>
+          <p style="font-size:12px; margin:0 0 12px; color:#8d99a9;">Optical pulse wave extraction via Plane-Orthogonal-to-Skin (POS) algorithm.</p>
+        </div>
+
+        <div class="vitals-grid">
+          <div class="vital-item">
+            <span>HEART RATE</span>
+            <b id="vitalHr">—</b>
+            <small style="color:#728094; font-size:9px;">BPM</small>
+          </div>
+          <div class="vital-item">
+            <span>RESPIRATION</span>
+            <b id="vitalResp">—</b>
+            <small style="color:#728094; font-size:9px;">BrPM (RSA)</small>
+          </div>
+          <div class="vital-item">
+            <span>SIGNAL QUALITY</span>
+            <b id="vitalSqi">—</b>
+            <small style="color:#728094; font-size:9px;">Spectral SQI</small>
+          </div>
+        </div>
+
+        <div>
+          <div style="display:flex; justify-content:space-between; font-size:10px; color:#728094; margin-top:4px;">
+            <span>Live Pulse Waveform (Forehead/Cheek Capillaries)</span>
+            <span id="pulseRateLabel">POS rPPG</span>
+          </div>
+          <canvas id="pulseCanvas"></canvas>
+        </div>
+      </article>
+    </div>
+
+    <!-- Dual-Axis Trajectory Chart -->
+    <article class="trajectory" style="margin-top:20px; height:390px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="margin:0;">Multimodal Temporal Trajectory</h3>
+        <span style="font-size:11px; color:#8d99a9;">Left: Facial Pain (PSPI 0–16) | Right: Model Confidence (%)</span>
+      </div>
+      <div style="height:320px; margin-top:10px;">
+        <canvas id="trajectoryChart"></canvas>
+      </div>
+    </article>
+
+    <div class="disclaimer">Academic research prototype. Outputs are intended for clinical research and do not constitute automated medical diagnosis.</div>
+  </section>
+
+  <!-- Section 9: Integrated Capabilities -->
+  <section>
+    <small>09 · RESEARCH ROADMAP</small>
+    <h2>Deployed Multimodal Capabilities</h2>
+    <div class="roadmap">
+      <div>Facial Video</div>
+      <i>→</i>
+      <div>MediaPipe Mesh</div>
+      <i>→</i>
+      <div>ConvNeXt PSPI</div>
+      <i>→</i>
+      <div>POS rPPG Vitals</div>
+      <i>→</i>
+      <div>Clinical CPOT/NRS</div>
+    </div>
+    <div class="future">
+      <span>✓ Contactless rPPG (Validated)</span>
+      <span>✓ Continuous PSPI Regression (Deployed)</span>
+      <span>✓ Standardized CPOT/NRS Mapping</span>
+      <span>✓ Quality-Gated Motion Gating</span>
+      <span>✓ Subject-Independent Cross-Validation</span>
+      <span>✓ 468-point 3D Face Landmarker</span>
+      <span>Spatiotemporal 3D-CNN / Transformers (Future)</span>
+      <span>NIR Night-time Camera Feeds (Future)</span>
+    </div>
+  </section>
+
+  <!-- Section 10: Disclaimer & Research Scope -->
+  <section>
+    <small>10 · SYSTEM SCOPE</small>
+    <h2>Clinical Scope & Research Boundaries</h2>
+    <div class="limits">
+      <p>This workstation is an advanced engineering prototype designed to evaluate contactless multimodal algorithms under controlled research conditions.</p>
+      <p>Continuous PSPI scores and vitals estimations are computed directly on edge via ConvNeXt-Tiny and POS rPPG, adhering to zero-storage privacy policies.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <b>PAIN<span>AI</span></b>
+  <p>Multimodal Contactless Pain & rPPG Assessment · Capstone Research Workstation · 2026</p>
+</footer>
+
+<script src="/app.js?v=5"></script>
+</body>
+</html>

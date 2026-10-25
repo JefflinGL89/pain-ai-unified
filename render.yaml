@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: pain-ai
+    runtime: docker
+    plan: free
+    envVars:
+      - key: MODEL_CHECKPOINT
+        value: models/resnet18_stage09b_weights.pth
